@@ -669,11 +669,13 @@
       margin-bottom: 1.25rem;
       border: 1px solid var(--border-color);
       transition: var(--transition-smooth);
+      cursor: pointer;
     }
  
     .project-card:hover .project-card-image {
       border-color: var(--color-secondary);
       transform: scale(1.02);
+      filter: brightness(1.1);
     }
     
     .project-category {
@@ -794,6 +796,65 @@
       border: 1px solid var(--border-color);
       border-radius: 4px;
       color: var(--text-secondary);
+    }
+    
+    /* Lightbox Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      padding-top: 50px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(10, 14, 23, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: var(--transition-smooth);
+    }
+    
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-lg);
+      animation: zoomIn 0.3s ease;
+    }
+    
+    @keyframes zoomIn {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: var(--text-primary);
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+    
+    .modal-close:hover {
+      color: var(--color-primary);
+    }
+    
+    #modal-caption {
+      margin: auto;
+      display: block;
+      width: 80%;
+      text-align: center;
+      color: var(--text-secondary);
+      padding: 15px 0;
+      font-size: 0.95rem;
+      font-weight: 500;
     }
     
     /* Academic & Publications */
@@ -1255,7 +1316,7 @@
       <div class="section-header">
         <div>
           <h2 class="section-title">Key Projects</h2>
-          <p class="section-desc">성공적으로 완수하여 실제 제품 및 서비스에 탑재된 프로젝트 목록입니다.</p>
+          <p class="section-desc">성공적으로 완수하여 실제 제품 및 서비스에 탑재된 프로젝트 목록입니다. (이미지를 클릭하시면 원본 크기로 크게 보실 수 있습니다.)</p>
         </div>
       </div>
       
@@ -1271,13 +1332,13 @@
         <!-- Proj 1 (Main 01) -->
         <div class="project-card" data-cat="llm">
           <div>
-            <img src="slides/page-06.png" alt="AgentGo Platform Architecture" class="project-card-image">
+            <img src="slides/page-06.png" alt="AgentGo Platform Architecture (클릭 시 원본 슬라이드 확대)" class="project-card-image">
             <div class="project-header-row">
               <div class="project-category">LLM / Agentic AI</div>
               <span class="project-badge main">Main Project 01</span>
             </div>
             <h4>AgentGo (Enterprise Multi-Agent Platform)</h4>
-            <p>사내 AX(AI Transformation) 표준 멀티 에이전트 플랫폼 전환 프로젝트. Planner-Orchestrator-Agent 구조로 지식 프로세스 자동화 및 에이전트 오케스트레이션 총괄.</p>
+            <p>사내 AX(AI Transformation) 표준 멀티 에이전트 플랫폼 구축 프로젝트. Planner-Orchestrator-Agent 구조로 지식 프로세스 자동화 및 에이전트 오케스트레이션 총괄.</p>
             <div class="project-details">
               <div class="project-details-section">
                 <strong>Overview</strong>
@@ -1321,7 +1382,7 @@
         <!-- Proj 2 (Main 02) -->
         <div class="project-card" data-cat="vision">
           <div>
-            <img src="slides/page-09.png" alt="Dental AI Analysis Workflow" class="project-card-image">
+            <img src="slides/page-09.png" alt="Dental AI Analysis Workflow (클릭 시 원본 슬라이드 확대)" class="project-card-image">
             <div class="project-header-row">
               <div class="project-category">Vision / Medical</div>
               <span class="project-badge main">Main Project 02</span>
@@ -1372,7 +1433,7 @@
         <!-- Proj 3 (Main 03) -->
         <div class="project-card" data-cat="ocr">
           <div>
-            <img src="slides/page-12.png" alt="Enterprise OCR Engine Workflow" class="project-card-image">
+            <img src="slides/page-12.png" alt="Enterprise OCR Engine Workflow (클릭 시 원본 슬라이드 확대)" class="project-card-image">
             <div class="project-header-row">
               <div class="project-category">OCR / Enterprise</div>
               <span class="project-badge main">Main Project 03</span>
@@ -1424,7 +1485,7 @@
         <!-- Proj 4 (Main 04) -->
         <div class="project-card" data-cat="llm">
           <div>
-            <img src="slides/page-15.png" alt="STT Post-processing & De-ID Architecture" class="project-card-image">
+            <img src="slides/page-15.png" alt="STT Post-processing & De-ID Architecture (클릭 시 원본 슬라이드 확대)" class="project-card-image">
             <div class="project-header-row">
               <div class="project-category">LLM / NLP</div>
               <span class="project-badge main">Main Project 04</span>
@@ -1747,6 +1808,13 @@
     </div>
   </footer>
 
+  <!-- Lightbox Modal Container -->
+  <div id="image-modal" class="modal" onclick="closeModal()">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modal-img" onclick="event.stopPropagation()">
+    <div id="modal-caption"></div>
+  </div>
+
   <script>
     // Scroll to section helper
     function scrollToSection(id) {
@@ -1803,6 +1871,33 @@
         currentTheme = 'dark';
       }
     }
+
+    // Image Modal Lightbox Control
+    const modal = document.getElementById("image-modal");
+    const modalImg = document.getElementById("modal-img");
+    const captionText = document.getElementById("modal-caption");
+    
+    // Bind click event to all project images
+    document.querySelectorAll('.project-card-image').forEach(img => {
+      img.addEventListener('click', function(e) {
+        e.stopPropagation(); // Card click bubble block
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        // Strip the tooltip hint for the modal caption
+        captionText.innerHTML = this.alt.replace(" (클릭 시 원본 슬라이드 확대)", "");
+      });
+    });
+    
+    function closeModal() {
+      modal.style.display = "none";
+    }
+    
+    // Close modal on Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === "Escape") {
+        closeModal();
+      }
+    });
   </script>
 </body>
 </html>
