@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>장현수 수석연구원 | AI Software Engineer & Researcher Portfolio</title>
-  
+
   <!-- Modern Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+    rel="stylesheet">
+
   <style>
     /* Design System & Custom Properties */
     :root {
@@ -21,12 +24,15 @@
       --text-primary: #F3F4F6;
       --text-secondary: #9CA3AF;
       --text-muted: #6B7280;
-      
-      --color-primary: #00F0FF; /* Electric Cyan */
-      --color-secondary: #8B5CF6; /* Neon Violet */
-      --color-accent: #10B981; /* Emerald Green */
+
+      --color-primary: #00F0FF;
+      /* Electric Cyan */
+      --color-secondary: #8B5CF6;
+      /* Neon Violet */
+      --color-accent: #10B981;
+      /* Emerald Green */
       --gradient-brand: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-      
+
       --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
       --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.3);
       --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.5);
@@ -35,10 +41,10 @@
       --radius-lg: 24px;
       --font-sans: 'Inter', 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       --font-mono: 'Fira Code', monospace;
-      
+
       --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    
+
     [data-theme="light"] {
       --bg-primary: #F3F4F6;
       --bg-secondary: #FFFFFF;
@@ -48,24 +54,26 @@
       --text-primary: #111827;
       --text-secondary: #4B5563;
       --text-muted: #9CA3AF;
-      
-      --color-primary: #0EA5E9; /* Ocean Blue */
-      --color-secondary: #6D28D9; /* Deep Purple */
+
+      --color-primary: #0EA5E9;
+      /* Ocean Blue */
+      --color-secondary: #6D28D9;
+      /* Deep Purple */
       --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.05);
       --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.08);
     }
-    
+
     /* Reset & Base Styles */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-    
+
     html {
       scroll-behavior: smooth;
     }
-    
+
     body {
       background-color: var(--bg-primary);
       color: var(--text-primary);
@@ -74,14 +82,14 @@
       overflow-x: hidden;
       transition: var(--transition-smooth);
     }
-    
+
     /* Layout */
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 2rem;
     }
-    
+
     header {
       position: fixed;
       top: 0;
@@ -94,14 +102,14 @@
       border-bottom: 1px solid var(--border-color);
       transition: var(--transition-smooth);
     }
-    
+
     .nav-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
       height: 70px;
     }
-    
+
     .logo {
       font-size: 1.5rem;
       font-weight: 800;
@@ -111,14 +119,14 @@
       background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    
+
     .nav-links {
       display: flex;
       gap: 2rem;
       list-style: none;
       align-items: center;
     }
-    
+
     .nav-link {
       color: var(--text-secondary);
       text-decoration: none;
@@ -128,11 +136,12 @@
       position: relative;
       cursor: pointer;
     }
-    
-    .nav-link:hover, .nav-link.active {
+
+    .nav-link:hover,
+    .nav-link.active {
       color: var(--text-primary);
     }
-    
+
     .nav-link::after {
       content: '';
       position: absolute;
@@ -143,17 +152,18 @@
       background: var(--gradient-brand);
       transition: var(--transition-smooth);
     }
-    
-    .nav-link:hover::after, .nav-link.active::after {
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
       width: 100%;
     }
-    
+
     .controls {
       display: flex;
       align-items: center;
       gap: 1rem;
     }
-    
+
     /* Theme & Print buttons */
     .btn-icon {
       background: transparent;
@@ -168,13 +178,13 @@
       cursor: pointer;
       transition: var(--transition-smooth);
     }
-    
+
     .btn-icon:hover {
       background-color: var(--bg-secondary);
       border-color: var(--color-primary);
       transform: translateY(-2px);
     }
-    
+
     /* Hero Section */
     .hero-section {
       padding: 10rem 0 6rem 0;
@@ -183,7 +193,7 @@
       align-items: center;
       position: relative;
     }
-    
+
     .hero-bg-glow {
       position: absolute;
       top: 10%;
@@ -195,7 +205,7 @@
       pointer-events: none;
       z-index: 0;
     }
-    
+
     .hero-grid {
       display: grid;
       grid-template-columns: 3fr 2fr;
@@ -204,7 +214,7 @@
       position: relative;
       z-index: 1;
     }
-    
+
     .hero-badge {
       display: inline-flex;
       align-items: center;
@@ -218,7 +228,7 @@
       font-weight: 600;
       margin-bottom: 1.5rem;
     }
-    
+
     .hero-title {
       font-size: 3.5rem;
       font-weight: 800;
@@ -226,28 +236,28 @@
       margin-bottom: 1.5rem;
       letter-spacing: -1.5px;
     }
-    
+
     .hero-title span {
       background: var(--gradient-brand);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    
+
     .hero-subtitle {
       font-size: 1.25rem;
       color: var(--text-secondary);
       margin-bottom: 2rem;
       max-width: 600px;
     }
-    
+
     .hero-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
       margin-bottom: 2.5rem;
     }
-    
+
     .tag {
       padding: 0.4rem 0.8rem;
       background: var(--bg-secondary);
@@ -257,18 +267,18 @@
       color: var(--text-secondary);
       transition: var(--transition-smooth);
     }
-    
+
     .tag:hover {
       border-color: var(--color-primary);
       color: var(--text-primary);
       transform: translateY(-2px);
     }
-    
+
     .hero-cta {
       display: flex;
       gap: 1rem;
     }
-    
+
     .btn {
       display: inline-flex;
       align-items: center;
@@ -281,31 +291,31 @@
       cursor: pointer;
       transition: var(--transition-smooth);
     }
-    
+
     .btn-primary {
       background: var(--gradient-brand);
       color: #0A0E17;
       border: none;
       box-shadow: 0 4px 20px rgba(0, 240, 255, 0.2);
     }
-    
+
     .btn-primary:hover {
       transform: translateY(-2px);
       box-shadow: 0 6px 25px rgba(0, 240, 255, 0.4);
     }
-    
+
     .btn-secondary {
       background: transparent;
       color: var(--text-primary);
       border: 1px solid var(--border-color);
     }
-    
+
     .btn-secondary:hover {
       background-color: var(--bg-secondary);
       border-color: var(--text-primary);
       transform: translateY(-2px);
     }
-    
+
     /* Interactive Card - Profile Summary */
     .profile-card {
       background: var(--bg-card);
@@ -317,7 +327,7 @@
       position: relative;
       overflow: hidden;
     }
-    
+
     .profile-card::before {
       content: '';
       position: absolute;
@@ -327,14 +337,14 @@
       height: 4px;
       background: var(--gradient-brand);
     }
-    
+
     .profile-header {
       display: flex;
       align-items: center;
       gap: 1.5rem;
       margin-bottom: 2rem;
     }
-    
+
     .profile-avatar {
       width: 80px;
       height: 80px;
@@ -348,81 +358,81 @@
       color: #0A0E17;
       box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
     }
-    
+
     .profile-title-group h3 {
       font-size: 1.5rem;
       font-weight: 700;
     }
-    
+
     .profile-title-group p {
       color: var(--color-primary);
       font-weight: 600;
       font-size: 0.9rem;
     }
-    
+
     .profile-info-list {
       list-style: none;
       display: flex;
       flex-direction: column;
       gap: 1rem;
     }
-    
+
     .profile-info-item {
       display: flex;
       justify-content: space-between;
       border-bottom: 1px solid var(--border-color);
       padding-bottom: 0.5rem;
     }
-    
+
     .profile-info-label {
       color: var(--text-secondary);
       font-weight: 500;
       font-size: 0.9rem;
     }
-    
+
     .profile-info-value {
       font-weight: 600;
       font-size: 0.9rem;
       text-align: right;
     }
-    
+
     /* Section Styles */
     .section {
       padding: 6rem 0;
       border-bottom: 1px solid var(--border-color);
     }
-    
+
     .section-header {
       margin-bottom: 3.5rem;
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
     }
-    
+
     .section-title {
       font-size: 2.2rem;
       font-weight: 800;
       letter-spacing: -1px;
     }
-    
+
     .section-title::after {
       content: '.';
       color: var(--color-primary);
     }
-    
+
     .section-desc {
       color: var(--text-secondary);
       margin-top: 0.5rem;
       font-size: 1rem;
     }
-    
+
     /* Skills Grid */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 2rem;
     }
-    
+
     .skill-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
@@ -431,32 +441,32 @@
       box-shadow: var(--shadow-sm);
       transition: var(--transition-smooth);
     }
-    
+
     .skill-card:hover {
       transform: translateY(-5px);
       border-color: var(--color-primary);
       box-shadow: var(--shadow-md);
     }
-    
+
     .skill-icon {
       font-size: 2rem;
       margin-bottom: 1.5rem;
       display: inline-block;
     }
-    
+
     .skill-card h4 {
       font-size: 1.2rem;
       font-weight: 700;
       margin-bottom: 1rem;
     }
-    
+
     .skill-list {
       list-style: none;
       display: flex;
       flex-direction: column;
       gap: 0.6rem;
     }
-    
+
     .skill-item {
       display: flex;
       align-items: center;
@@ -464,19 +474,19 @@
       font-size: 0.9rem;
       color: var(--text-secondary);
     }
-    
+
     .skill-item::before {
       content: '⚡';
       font-size: 0.8rem;
     }
-    
+
     /* Experience Timeline */
     .timeline {
       position: relative;
       max-width: 900px;
       margin: 0 auto;
     }
-    
+
     .timeline::before {
       content: '';
       position: absolute;
@@ -486,17 +496,17 @@
       width: 2px;
       background: var(--border-color);
     }
-    
+
     .timeline-item {
       position: relative;
       padding-left: 80px;
       margin-bottom: 4rem;
     }
-    
+
     .timeline-item:last-child {
       margin-bottom: 0;
     }
-    
+
     .timeline-badge {
       position: absolute;
       top: 0;
@@ -512,12 +522,12 @@
       z-index: 1;
       transition: var(--transition-smooth);
     }
-    
+
     .timeline-item:hover .timeline-badge {
       background: var(--color-primary);
       box-shadow: 0 0 12px var(--color-primary);
     }
-    
+
     .timeline-date {
       font-family: var(--font-mono);
       font-size: 0.9rem;
@@ -525,7 +535,7 @@
       font-weight: 600;
       margin-bottom: 0.5rem;
     }
-    
+
     .timeline-content {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
@@ -534,18 +544,18 @@
       box-shadow: var(--shadow-sm);
       transition: var(--transition-smooth);
     }
-    
+
     .timeline-content:hover {
       border-color: rgba(255, 255, 255, 0.15);
       box-shadow: var(--shadow-md);
     }
-    
+
     .timeline-role {
       font-size: 1.4rem;
       font-weight: 700;
       margin-bottom: 0.25rem;
     }
-    
+
     .timeline-company {
       font-size: 1rem;
       color: var(--text-secondary);
@@ -556,38 +566,38 @@
       flex-wrap: wrap;
       gap: 0.5rem;
     }
-    
+
     .timeline-company span.meta {
       font-weight: 400;
       font-size: 0.85rem;
       color: var(--text-muted);
     }
-    
+
     .timeline-projects {
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
     }
-    
+
     .timeline-project-card {
       background: var(--bg-secondary);
       border-radius: var(--radius-sm);
       padding: 1.25rem;
       border-left: 3px solid var(--color-secondary);
     }
-    
+
     .timeline-project-card h5 {
       font-size: 1.05rem;
       font-weight: 700;
       margin-bottom: 0.5rem;
     }
-    
+
     .timeline-project-card p {
       font-size: 0.9rem;
       color: var(--text-secondary);
       margin-bottom: 0.75rem;
     }
-    
+
     .timeline-project-card ul {
       list-style-position: inside;
       font-size: 0.85rem;
@@ -596,7 +606,7 @@
       flex-direction: column;
       gap: 0.3rem;
     }
-    
+
     .timeline-project-card .metrics {
       display: inline-block;
       margin-top: 0.75rem;
@@ -607,7 +617,7 @@
       padding: 0.25rem 0.5rem;
       border-radius: 4px;
     }
-    
+
     /* Project Filter Controls */
     .filter-container {
       display: flex;
@@ -615,7 +625,7 @@
       margin-bottom: 2rem;
       flex-wrap: wrap;
     }
-    
+
     .filter-btn {
       background: var(--bg-secondary);
       border: 1px solid var(--border-color);
@@ -627,21 +637,22 @@
       cursor: pointer;
       transition: var(--transition-smooth);
     }
-    
-    .filter-btn.active, .filter-btn:hover {
+
+    .filter-btn.active,
+    .filter-btn:hover {
       background: var(--gradient-brand);
       color: #0A0E17;
       border-color: transparent;
       box-shadow: var(--shadow-sm);
     }
-    
+
     /* Project Showcase Section */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
       gap: 2rem;
     }
-    
+
     .project-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
@@ -654,13 +665,13 @@
       overflow: hidden;
       transition: var(--transition-smooth);
     }
-    
+
     .project-card:hover {
       transform: translateY(-5px);
       border-color: var(--color-secondary);
       box-shadow: var(--shadow-md);
     }
- 
+
     .project-card-image {
       width: 100%;
       height: 180px;
@@ -671,13 +682,13 @@
       transition: var(--transition-smooth);
       cursor: pointer;
     }
- 
+
     .project-card:hover .project-card-image {
       border-color: var(--color-secondary);
       transform: scale(1.02);
       filter: brightness(1.1);
     }
-    
+
     .project-category {
       font-family: var(--font-mono);
       font-size: 0.75rem;
@@ -685,14 +696,14 @@
       letter-spacing: 1px;
       color: var(--color-secondary);
     }
-    
+
     .project-header-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 0.5rem;
     }
-    
+
     .project-badge {
       font-size: 0.7rem;
       font-weight: 700;
@@ -701,31 +712,31 @@
       text-transform: uppercase;
       font-family: var(--font-mono);
     }
-    
+
     .project-badge.main {
       background: rgba(0, 240, 255, 0.15);
       border: 1px solid rgba(0, 240, 255, 0.3);
       color: var(--color-primary);
     }
-    
+
     .project-badge.additional {
       background: rgba(139, 92, 246, 0.15);
       border: 1px solid rgba(139, 92, 246, 0.3);
       color: var(--color-secondary);
     }
-    
+
     .project-card h4 {
       font-size: 1.25rem;
       font-weight: 700;
       margin-bottom: 1rem;
     }
-    
+
     .project-card p {
       font-size: 0.9rem;
       color: var(--text-secondary);
       margin-bottom: 1.5rem;
     }
-    
+
     .project-details {
       margin-bottom: 1.5rem;
       border-top: 1px solid var(--border-color);
@@ -734,11 +745,11 @@
       flex-direction: column;
       gap: 0.8rem;
     }
-    
+
     .project-details-section {
       margin-bottom: 0.2rem;
     }
-    
+
     .project-details-section strong {
       display: block;
       font-size: 0.82rem;
@@ -747,12 +758,12 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
-    
+
     .project-details-section ul {
       list-style-type: none;
       padding-left: 0.25rem;
     }
-    
+
     .project-details-section li {
       font-size: 0.8rem;
       color: var(--text-secondary);
@@ -761,14 +772,14 @@
       position: relative;
       padding-left: 0.75rem;
     }
-    
+
     .project-details-section li::before {
       content: "•";
       position: absolute;
       left: 0;
       color: var(--color-secondary);
     }
-    
+
     .project-details-item {
       font-size: 0.85rem;
       color: var(--text-secondary);
@@ -776,18 +787,18 @@
       display: flex;
       gap: 0.5rem;
     }
-    
+
     .project-details-item strong {
       color: var(--text-primary);
       min-width: 80px;
     }
-    
+
     .project-tech {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
     }
-    
+
     .tech-pill {
       font-family: var(--font-mono);
       font-size: 0.75rem;
@@ -797,7 +808,7 @@
       border-radius: 4px;
       color: var(--text-secondary);
     }
-    
+
     /* Lightbox Modal */
     .modal {
       display: none;
@@ -814,7 +825,7 @@
       -webkit-backdrop-filter: blur(10px);
       transition: var(--transition-smooth);
     }
-    
+
     .modal-content {
       margin: auto;
       display: block;
@@ -825,12 +836,19 @@
       box-shadow: var(--shadow-lg);
       animation: zoomIn 0.3s ease;
     }
-    
+
     @keyframes zoomIn {
-      from { transform: scale(0.9); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
+      from {
+        transform: scale(0.9);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
     }
-    
+
     .modal-close {
       position: absolute;
       top: 20px;
@@ -841,11 +859,11 @@
       cursor: pointer;
       transition: var(--transition-smooth);
     }
-    
+
     .modal-close:hover {
       color: var(--color-primary);
     }
-    
+
     #modal-caption {
       margin: auto;
       display: block;
@@ -856,14 +874,14 @@
       font-size: 0.95rem;
       font-weight: 500;
     }
-    
+
     /* Academic & Publications */
     .academic-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
       gap: 2rem;
     }
-    
+
     .paper-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
@@ -873,12 +891,12 @@
       overflow: hidden;
       transition: var(--transition-smooth);
     }
-    
+
     .paper-card:hover {
       border-color: var(--color-primary);
       box-shadow: var(--shadow-md);
     }
-    
+
     .paper-tag {
       display: inline-block;
       font-family: var(--font-mono);
@@ -889,24 +907,24 @@
       border-radius: 4px;
       margin-bottom: 1rem;
     }
-    
+
     .paper-card h4 {
       font-size: 1.15rem;
       font-weight: 700;
       margin-bottom: 0.75rem;
     }
-    
+
     .paper-meta {
       font-size: 0.85rem;
       color: var(--text-secondary);
       margin-bottom: 1rem;
     }
-    
+
     .paper-desc {
       font-size: 0.9rem;
       color: var(--text-secondary);
     }
-    
+
     /* Footer */
     footer {
       padding: 4rem 0;
@@ -914,45 +932,55 @@
       background: var(--bg-secondary);
       text-align: center;
     }
-    
+
     .footer-content p {
       color: var(--text-muted);
       font-size: 0.9rem;
     }
-    
+
     /* Animations */
     @keyframes fadeInUp {
       from {
         opacity: 0;
         transform: translateY(20px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
-    
+
     .animate-fade-in-up {
       animation: fadeInUp 0.8s ease forwards;
     }
-    
+
     /* Print Styles */
     @media print {
       body {
         background-color: #FFFFFF !important;
         color: #000000 !important;
       }
-      header, footer, .controls, .hero-bg-glow, .filter-container, .btn {
+
+      header,
+      footer,
+      .controls,
+      .hero-bg-glow,
+      .filter-container,
+      .btn {
         display: none !important;
       }
+
       .hero-section {
         padding: 2rem 0 !important;
         min-height: auto !important;
       }
+
       .hero-grid {
         grid-template-columns: 1fr !important;
         gap: 2rem !important;
       }
+
       .profile-card {
         background: #FFFFFF !important;
         color: #000000 !important;
@@ -960,51 +988,65 @@
         box-shadow: none !important;
         padding: 1.5rem !important;
       }
+
       .profile-avatar {
         background: #EEEEEE !important;
         color: #000000 !important;
       }
+
       .section {
         padding: 2rem 0 !important;
         page-break-inside: avoid;
       }
-      .skill-card, .timeline-content, .project-card, .paper-card {
+
+      .skill-card,
+      .timeline-content,
+      .project-card,
+      .paper-card {
         background: #FFFFFF !important;
         color: #000000 !important;
         border: 1px solid #CCCCCC !important;
         box-shadow: none !important;
         page-break-inside: avoid;
       }
-      .tag, .tech-pill {
+
+      .tag,
+      .tech-pill {
         border-color: #999999 !important;
         color: #000000 !important;
       }
+
       .timeline::before {
         background: #CCCCCC !important;
       }
+
       .timeline-badge {
         border-color: #000000 !important;
       }
     }
-    
+
     /* Responsive design */
     @media (max-width: 968px) {
       .hero-grid {
         grid-template-columns: 1fr;
         gap: 3rem;
       }
+
       .hero-title {
         font-size: 2.8rem;
       }
+
       .nav-links {
         display: none;
       }
+
       .academic-grid {
         grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
+
 <body>
 
   <!-- Floating Header / Navigation -->
@@ -1020,7 +1062,8 @@
       </ul>
       <div class="controls">
         <button class="btn-icon" onclick="toggleTheme()" title="테마 변경 (다크/라이트)">
-          <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
             <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -1033,7 +1076,8 @@
           </svg>
         </button>
         <button class="btn-icon" onclick="window.print()" title="PDF 다운로드 / 인쇄">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="6 9 6 2 18 2 18 9"></polyline>
             <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
             <rect x="6" y="14" width="12" height="8"></rect>
@@ -1072,7 +1116,7 @@
           <a class="btn btn-secondary" onclick="scrollToSection('experience')">경력 요약</a>
         </div>
       </div>
-      
+
       <!-- Interactive Profile Card -->
       <div class="profile-card animate-fade-in-up" style="animation-delay: 0.2s;">
         <div class="profile-header">
@@ -1117,7 +1161,7 @@
           <p class="section-desc">연구부터 프로덕션 배포까지, 다년간 축적해 온 핵심 기술 스택입니다.</p>
         </div>
       </div>
-      
+
       <div class="skills-grid">
         <!-- Skill 1 -->
         <div class="skill-card">
@@ -1130,7 +1174,7 @@
             <li class="skill-item">FastAPI 기반 Multi-Agent 구현</li>
           </ul>
         </div>
-        
+
         <!-- Skill 2 -->
         <div class="skill-card">
           <span class="skill-icon">👁️</span>
@@ -1142,7 +1186,7 @@
             <li class="skill-item">치식 기반 자동 진단 자동화</li>
           </ul>
         </div>
-        
+
         <!-- Skill 3 -->
         <div class="skill-card">
           <span class="skill-icon">🗣️</span>
@@ -1154,7 +1198,7 @@
             <li class="skill-item">Text-to-SQL 검증 및 프롬프트 설계</li>
           </ul>
         </div>
-        
+
         <!-- Skill 4 -->
         <div class="skill-card">
           <span class="skill-icon">⚙️</span>
@@ -1179,7 +1223,7 @@
           <p class="section-desc">주요 기업에서 진행한 AI 연구 개발 및 리드 경력의 타임라인입니다.</p>
         </div>
       </div>
-      
+
       <div class="timeline">
         <!-- Exp 1 -->
         <div class="timeline-item">
@@ -1191,7 +1235,7 @@
               아이티센글로벌 (AI서비스팀)
               <span class="meta">IT 서비스 및 AI 플랫폼 구축 전문 기업 | 임직원 약 3,000명</span>
             </div>
-            
+
             <div class="timeline-projects">
               <div class="timeline-project-card">
                 <h5>사내 LLM 챗봇 → Agentic AI 플랫폼 구축 (CENI v1 ~ v3, AgentGo)</h5>
@@ -1203,7 +1247,7 @@
                 </ul>
                 <div class="metrics">연간 6만 달러 비용 절감, 사용량 20배 증가</div>
               </div>
-              
+
               <div class="timeline-project-card" style="border-left-color: var(--color-accent);">
                 <h5>AI 기반 법무 계약서 검토 시스템</h5>
                 <p>법무 문서의 조항 누락 및 법률 리스크 선제 필터링 RAG 시스템 구축</p>
@@ -1215,7 +1259,7 @@
             </div>
           </div>
         </div>
-        
+
         <!-- Exp 2 -->
         <div class="timeline-item">
           <div class="timeline-badge"></div>
@@ -1226,7 +1270,7 @@
               사이버메드 (AI개발팀)
               <span class="meta">3D 의료영상 기반 디지털 진단 솔루션 전문 기업</span>
             </div>
-            
+
             <div class="timeline-projects">
               <div class="timeline-project-card">
                 <h5>2D 파노라마 치과 영상 기반 진단 AI</h5>
@@ -1236,7 +1280,7 @@
                   <li>다중 AI 결과 통합 치식(Tooth Numbering) 기준 자동 리포트 파이프라인 상용화</li>
                 </ul>
               </div>
-              
+
               <div class="timeline-project-card" style="border-left-color: var(--color-accent);">
                 <h5>3D CBCT 기반 구강 구조 분석 AI</h5>
                 <p>임플란트 수술 계획 및 정렬 분석을 위한 3D 영상 R&D</p>
@@ -1248,7 +1292,7 @@
             </div>
           </div>
         </div>
-        
+
         <!-- Exp 3 -->
         <div class="timeline-item">
           <div class="timeline-badge"></div>
@@ -1259,7 +1303,7 @@
               셀바스 AI (AI연구소)
               <span class="meta">HCI 기반 AI 원천 기술 및 엔진 보유 솔루션 기업</span>
             </div>
-            
+
             <div class="timeline-projects">
               <div class="timeline-project-card">
                 <h5>자체 OCR 엔진 및 비정형 문서 분석 솔루션</h5>
@@ -1270,7 +1314,7 @@
                   <li>KB국민은행, SC제일은행, LG CNS, SKT 등 주요 엔터프라이즈 납품</li>
                 </ul>
               </div>
-              
+
               <div class="timeline-project-card" style="border-left-color: var(--color-accent);">
                 <h5>STT/NLP 기반 정보 추출 및 개인정보 비식별화</h5>
                 <p>텍스트 실시간 가공 및 민감 정보 마스킹 언어 모델 구축</p>
@@ -1282,7 +1326,7 @@
             </div>
           </div>
         </div>
-        
+
         <!-- Exp 4 -->
         <div class="timeline-item">
           <div class="timeline-badge"></div>
@@ -1293,7 +1337,7 @@
               머신인텔리전스 (검색엔진팀)
               <span class="meta">데이터 마이닝 및 정보 검색 솔루션 스타트업</span>
             </div>
-            
+
             <div class="timeline-projects">
               <div class="timeline-project-card">
                 <h5>Solr 기반 문서 검색 엔진 구축</h5>
@@ -1319,7 +1363,7 @@
           <p class="section-desc">성공적으로 완수하여 실제 제품 및 서비스에 탑재된 프로젝트 목록입니다. (이미지를 클릭하시면 원본 크기로 크게 보실 수 있습니다.)</p>
         </div>
       </div>
-      
+
       <!-- Filter buttons -->
       <div class="filter-container">
         <button class="filter-btn active" onclick="filterProjects('all')">All Projects</button>
@@ -1327,18 +1371,20 @@
         <button class="filter-btn" onclick="filterProjects('vision')">Vision & Medical</button>
         <button class="filter-btn" onclick="filterProjects('ocr')">OCR & Search</button>
       </div>
-      
+
       <div class="projects-grid">
         <!-- Proj 1 (Main 01) -->
         <div class="project-card" data-cat="llm">
           <div>
-            <img src="slides/page-06.png" alt="AgentGo Platform Architecture (클릭 시 원본 슬라이드 확대)" class="project-card-image">
+            <img src="slides/page-06.png" alt="AgentGo Platform Architecture (클릭 시 원본 슬라이드 확대)"
+              class="project-card-image">
             <div class="project-header-row">
               <div class="project-category">LLM / Agentic AI</div>
               <span class="project-badge main">Main Project 01</span>
             </div>
             <h4>AgentGo (Enterprise Multi-Agent Platform)</h4>
-            <p>사내 AX(AI Transformation) 표준 멀티 에이전트 플랫폼 구축 프로젝트. Planner-Orchestrator-Agent 구조로 지식 프로세스 자동화 및 에이전트 오케스트레이션 총괄.</p>
+            <p>사내 AX(AI Transformation) 표준 멀티 에이전트 플랫폼 구축 프로젝트. Planner-Orchestrator-Agent 구조로 지식 프로세스 자동화 및 에이전트
+              오케스트레이션 총괄.</p>
             <div class="project-details">
               <div class="project-details-section">
                 <strong>Overview</strong>
@@ -1378,17 +1424,19 @@
             <span class="tech-pill">MCP</span>
           </div>
         </div>
-        
+
         <!-- Proj 2 (Main 02) -->
         <div class="project-card" data-cat="vision">
           <div>
-            <img src="slides/page-09.png" alt="Dental AI Analysis Workflow (클릭 시 원본 슬라이드 확대)" class="project-card-image">
+            <img src="slides/page-09.png" alt="Dental AI Analysis Workflow (클릭 시 원본 슬라이드 확대)"
+              class="project-card-image">
             <div class="project-header-row">
               <div class="project-category">Vision / Medical</div>
               <span class="project-badge main">Main Project 02</span>
             </div>
             <h4>Dental AI Analysis System</h4>
-            <p>2D 파노라마 치과 영상 및 3D CBCT 의료 영상을 AI 모델로 자동 분석하여 치식(Tooth Numbering) 기준 진단 리포트를 생성하고 임플란트 모의 수술을 지원하는 통합 솔루션.</p>
+            <p>2D 파노라마 치과 영상 및 3D CBCT 의료 영상을 AI 모델로 자동 분석하여 치식(Tooth Numbering) 기준 진단 리포트를 생성하고 임플란트 모의 수술을 지원하는 통합
+              솔루션.</p>
             <div class="project-details">
               <div class="project-details-section">
                 <strong>Overview</strong>
@@ -1429,11 +1477,12 @@
             <span class="tech-pill">C++ / C#</span>
           </div>
         </div>
-        
+
         <!-- Proj 3 (Main 03) -->
         <div class="project-card" data-cat="ocr">
           <div>
-            <img src="slides/page-12.png" alt="Enterprise OCR Engine Workflow (클릭 시 원본 슬라이드 확대)" class="project-card-image">
+            <img src="slides/page-12.png" alt="Enterprise OCR Engine Workflow (클릭 시 원본 슬라이드 확대)"
+              class="project-card-image">
             <div class="project-header-row">
               <div class="project-category">OCR / Enterprise</div>
               <span class="project-badge main">Main Project 03</span>
@@ -1481,17 +1530,19 @@
             <span class="tech-pill">OpenCV</span>
           </div>
         </div>
-        
+
         <!-- Proj 4 (Main 04) -->
         <div class="project-card" data-cat="llm">
           <div>
-            <img src="slides/page-15.png" alt="STT Post-processing & De-ID Architecture (클릭 시 원본 슬라이드 확대)" class="project-card-image">
+            <img src="slides/page-15.png" alt="STT Post-processing & De-ID Architecture (클릭 시 원본 슬라이드 확대)"
+              class="project-card-image">
             <div class="project-header-row">
               <div class="project-category">LLM / NLP</div>
               <span class="project-badge main">Main Project 04</span>
             </div>
             <h4>STT Post-processing & De-Identification System</h4>
-            <p>음성인식(STT) 엔진 결과를 받아 실시간으로 텍스트를 후처리(정규화, 역텍스트 정규화, 띄어쓰기 보정)하고 KoELECTRA 기반 NER 모델로 민감한 개인정보를 탐지 및 마스킹하는 시스템.</p>
+            <p>음성인식(STT) 엔진 결과를 받아 실시간으로 텍스트를 후처리(정규화, 역텍스트 정규화, 띄어쓰기 보정)하고 KoELECTRA 기반 NER 모델로 민감한 개인정보를 탐지 및 마스킹하는
+              시스템.</p>
             <div class="project-details">
               <div class="project-details-section">
                 <strong>Overview</strong>
@@ -1535,7 +1586,7 @@
             <span class="tech-pill">Docker</span>
           </div>
         </div>
-        
+
         <!-- Proj 5 (Additional 01) -->
         <div class="project-card" data-cat="ocr">
           <div>
@@ -1712,192 +1763,200 @@
         </div>
       </div>
 
-  <!-- Academic & Credentials Section -->
-  <section id="academic" class="section">
-    <div class="container">
-      <div class="section-header">
-        <div>
-          <h2 class="section-title">Research & Credentials</h2>
-          <p class="section-desc">학계 게재 연구 논문 및 공식 수상, 전문 자격 증명입니다.</p>
-        </div>
-      </div>
-      
-      <div class="academic-grid">
-        <!-- Left Column: Research Papers -->
-        <div class="academic-col">
-          <h3 style="font-size: 1.4rem; margin-bottom: 1.5rem; color: var(--color-primary);">Research Papers</h3>
-          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            <!-- Paper 1 -->
-            <div class="paper-card">
-              <span class="paper-tag">SCIE Journal (Bioengineering)</span>
-              <h4>Toward digital twin development for implant placement planning using parametric reduced order model</h4>
-              <p class="paper-meta">저자: 장현수 등 | 게재년도: 2023</p>
-              <p class="paper-desc">
-                임플란트 식립 시뮬레이션을 더욱 신속하게 실시간 예측할 수 있도록 Parametric ROM(Reduced Order Model) 분석을 연계한 디지털 트윈 기반 설계 및 구조 시뮬레이션 연구.
-              </p>
+      <!-- Academic & Credentials Section -->
+      <section id="academic" class="section">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Research & Credentials</h2>
+              <p class="section-desc">학계 게재 연구 논문 및 공식 수상, 전문 자격 증명입니다.</p>
             </div>
-            
-            <!-- Paper 2 -->
-            <div class="paper-card">
-              <span class="paper-tag">KCI Journal (데이타베이스연구)</span>
-              <h4>가상 치아 이미지 생성을 위한 딥러닝 모델 연구</h4>
-              <p class="paper-meta">저자: 장현수 등 | 게재년도: 2022</p>
-              <p class="paper-desc">
-                3D Dental 보철물 설계 지원 목적의 생성적 적대 신경망(GAN) 기반 가상 치아 구강 이미지 합성 및 기하적 특징 공간 매핑 연구.
-              </p>
+          </div>
+
+          <div class="academic-grid">
+            <!-- Left Column: Research Papers -->
+            <div class="academic-col">
+              <h3 style="font-size: 1.4rem; margin-bottom: 1.5rem; color: var(--color-primary);">Research Papers</h3>
+              <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <!-- Paper 1 -->
+                <div class="paper-card">
+                  <span class="paper-tag">Bioengineering</span>
+                  <h4>Toward digital twin development for implant placement planning using parametric reduced order
+                    model</h4>
+                  <p class="paper-meta">게재년도: 2023</p>
+                  <p class="paper-desc">
+                    임플란트 식립 시뮬레이션을 더욱 신속하게 실시간 예측할 수 있도록 Parametric ROM(Reduced Order Model) 분석을 연계한 디지털 트윈 기반 설계 및 구조
+                    시뮬레이션 연구.
+                  </p>
+                </div>
+
+                <!-- Paper 2 -->
+                <div class="paper-card">
+                  <span class="paper-tag">KCI Journal</span>
+                  <h4>가상 치아 이미지 생성을 위한 딥러닝 모델 연구</h4>
+                  <p class="paper-meta">게재년도: 2022</p>
+                  <p class="paper-desc">
+                    3D Dental 보철물 설계 지원 목적의 생성적 적대 신경망(GAN) 기반 가상 치아 구강 이미지 합성 및 기하적 특징 공간 매핑 연구.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Awards & Certificates -->
+            <div class="academic-col">
+              <h3 style="font-size: 1.4rem; margin-bottom: 1.5rem; color: var(--color-secondary);">Awards & Certificates
+              </h3>
+
+              <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <!-- Awards Card -->
+                <div class="paper-card" style="border-left: 3px solid var(--color-secondary);">
+                  <span class="paper-tag"
+                    style="color: var(--color-secondary); background: rgba(139, 92, 246, 0.1);">Key Awards</span>
+                  <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem; margin-top: 0.5rem;">
+                    <li>
+                      <strong style="color: var(--text-primary);">그룹 핵심가치상 (2026)</strong>
+                      <div style="font-size: 0.85rem; color: var(--text-secondary);">아이티센 글로벌 수여 | AI Platform
+                        Development 부문</div>
+                    </li>
+                    <li>
+                      <strong style="color: var(--text-primary);">ICT융합인재양성 최우수상 (2023)</strong>
+                      <div style="font-size: 0.85rem; color: var(--text-secondary);">의료 시뮬레이션 연구 성과</div>
+                    </li>
+                    <li>
+                      <strong style="color: var(--text-primary);">ICT융합인재양성 대상 (2022)</strong>
+                      <div style="font-size: 0.85rem; color: var(--text-secondary);">치과 3D 영상 AI R&D 부문</div>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Certificates Card -->
+                <div class="paper-card" style="border-left: 3px solid var(--color-accent);">
+                  <span class="paper-tag"
+                    style="color: var(--color-accent); background: rgba(16, 185, 129, 0.1);">Certificates &
+                    Education</span>
+                  <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem; margin-top: 0.5rem;">
+                    <li>
+                      <strong style="color: var(--text-primary);">빅데이터분석기사 (2023)</strong>
+                      <div style="font-size: 0.85rem; color: var(--text-secondary);">발급기관: 한국데이터산업진흥원</div>
+                    </li>
+                    <li>
+                      <strong style="color: var(--text-primary);">정보처리기사 (2018)</strong>
+                      <div style="font-size: 0.85rem; color: var(--text-secondary);">발급기관: 한국산업인력공단</div>
+                    </li>
+                    <li>
+                      <strong style="color: var(--text-primary);">홍익대학교 대학원 컴퓨터공학 석사</strong>
+                      <div style="font-size: 0.85rem; color: var(--text-secondary);">평점 4.31 / 4.5</div>
+                    </li>
+                    <li>
+                      <strong style="color: var(--text-primary);">홍익대학교 컴퓨터공학과 학사</strong>
+                      <div style="font-size: 0.85rem; color: var(--text-secondary);">평점 3.41 / 4.5</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+      </section>
 
-        <!-- Right Column: Awards & Certificates -->
-        <div class="academic-col">
-          <h3 style="font-size: 1.4rem; margin-bottom: 1.5rem; color: var(--color-secondary);">Awards & Certificates</h3>
-          
-          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            <!-- Awards Card -->
-            <div class="paper-card" style="border-left: 3px solid var(--color-secondary);">
-              <span class="paper-tag" style="color: var(--color-secondary); background: rgba(139, 92, 246, 0.1);">Key Awards</span>
-              <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem; margin-top: 0.5rem;">
-                <li>
-                  <strong style="color: var(--text-primary);">그룹 핵심가치상 (2026)</strong>
-                  <div style="font-size: 0.85rem; color: var(--text-secondary);">아이티센 글로벌 수여 | AI Platform Development 부문</div>
-                </li>
-                <li>
-                  <strong style="color: var(--text-primary);">ICT융합인재양성 최우수상 (2023)</strong>
-                  <div style="font-size: 0.85rem; color: var(--text-secondary);">의료 시뮬레이션 연구 성과</div>
-                </li>
-                <li>
-                  <strong style="color: var(--text-primary);">ICT융합인재양성 대상 (2022)</strong>
-                  <div style="font-size: 0.85rem; color: var(--text-secondary);">치과 3D 영상 AI R&D 부문</div>
-                </li>
-              </ul>
-            </div>
-
-            <!-- Certificates Card -->
-            <div class="paper-card" style="border-left: 3px solid var(--color-accent);">
-              <span class="paper-tag" style="color: var(--color-accent); background: rgba(16, 185, 129, 0.1);">Certificates & Education</span>
-              <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem; margin-top: 0.5rem;">
-                <li>
-                  <strong style="color: var(--text-primary);">빅데이터분석기사 (2023)</strong>
-                  <div style="font-size: 0.85rem; color: var(--text-secondary);">발급기관: 한국데이터산업진흥원</div>
-                </li>
-                <li>
-                  <strong style="color: var(--text-primary);">정보처리기사 (2018)</strong>
-                  <div style="font-size: 0.85rem; color: var(--text-secondary);">발급기관: 한국산업인력공단</div>
-                </li>
-                <li>
-                  <strong style="color: var(--text-primary);">홍익대학교 대학원 컴퓨터공학 석사</strong>
-                  <div style="font-size: 0.85rem; color: var(--text-secondary);">평점 4.31 / 4.5</div>
-                </li>
-                <li>
-                  <strong style="color: var(--text-primary);">홍익대학교 컴퓨터공학과 학사</strong>
-                  <div style="font-size: 0.85rem; color: var(--text-secondary);">평점 3.41 / 4.5</div>
-                </li>
-              </ul>
-            </div>
-          </div>
+      <!-- Footer -->
+      <footer>
+        <div class="container footer-content">
+          <p>© 2026 Hyun-soo Jang. All Rights Reserved. Designed for Premium AI Portfolio Presentation.</p>
         </div>
+      </footer>
+
+      <!-- Lightbox Modal Container -->
+      <div id="image-modal" class="modal" onclick="closeModal()">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modal-img" onclick="event.stopPropagation()">
+        <div id="modal-caption"></div>
       </div>
-    </div>
-  </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-content">
-      <p>© 2026 Hyeon-su Jang. All Rights Reserved. Designed for Premium AI Portfolio Presentation.</p>
-    </div>
-  </footer>
+      <script>
+        // Scroll to section helper
+        function scrollToSection(id) {
+          const el = document.getElementById(id);
+          if (el) {
+            window.scrollTo({
+              top: el.offsetTop - 70,
+              behavior: 'smooth'
+            });
 
-  <!-- Lightbox Modal Container -->
-  <div id="image-modal" class="modal" onclick="closeModal()">
-    <span class="modal-close" onclick="closeModal()">&times;</span>
-    <img class="modal-content" id="modal-img" onclick="event.stopPropagation()">
-    <div id="modal-caption"></div>
-  </div>
+            // Active link class update
+            document.querySelectorAll('.nav-link').forEach(link => {
+              link.classList.remove('active');
+              if (link.textContent.toLowerCase() === id) {
+                link.classList.add('active');
+              }
+            });
+          }
+        }
 
-  <script>
-    // Scroll to section helper
-    function scrollToSection(id) {
-      const el = document.getElementById(id);
-      if (el) {
-        window.scrollTo({
-          top: el.offsetTop - 70,
-          behavior: 'smooth'
+        // Project filter logic
+        function filterProjects(category) {
+          // Update active button
+          document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.classList.remove('active');
+          });
+          event.target.classList.add('active');
+
+          // Filter cards
+          const cards = document.querySelectorAll('.project-card');
+          cards.forEach(card => {
+            if (category === 'all' || card.getAttribute('data-cat') === category) {
+              card.style.display = 'flex';
+              card.style.opacity = '1';
+              card.style.transform = 'scale(1)';
+            } else {
+              card.style.display = 'none';
+              card.style.opacity = '0';
+            }
+          });
+        }
+
+        // Dark/Light Theme toggle
+        let currentTheme = 'dark';
+        function toggleTheme() {
+          const root = document.documentElement;
+          const themeIcon = document.getElementById('theme-icon');
+
+          if (currentTheme === 'dark') {
+            root.setAttribute('data-theme', 'light');
+            currentTheme = 'light';
+          } else {
+            root.removeAttribute('data-theme');
+            currentTheme = 'dark';
+          }
+        }
+
+        // Image Modal Lightbox Control
+        const modal = document.getElementById("image-modal");
+        const modalImg = document.getElementById("modal-img");
+        const captionText = document.getElementById("modal-caption");
+
+        // Bind click event to all project images
+        document.querySelectorAll('.project-card-image').forEach(img => {
+          img.addEventListener('click', function (e) {
+            e.stopPropagation(); // Card click bubble block
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            // Strip the tooltip hint for the modal caption
+            captionText.innerHTML = this.alt.replace(" (클릭 시 원본 슬라이드 확대)", "");
+          });
         });
-        
-        // Active link class update
-        document.querySelectorAll('.nav-link').forEach(link => {
-          link.classList.remove('active');
-          if (link.textContent.toLowerCase() === id) {
-            link.classList.add('active');
+
+        function closeModal() {
+          modal.style.display = "none";
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function (event) {
+          if (event.key === "Escape") {
+            closeModal();
           }
         });
-      }
-    }
-    
-    // Project filter logic
-    function filterProjects(category) {
-      // Update active button
-      document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.classList.remove('active');
-      });
-      event.target.classList.add('active');
-      
-      // Filter cards
-      const cards = document.querySelectorAll('.project-card');
-      cards.forEach(card => {
-        if (category === 'all' || card.getAttribute('data-cat') === category) {
-          card.style.display = 'flex';
-          card.style.opacity = '1';
-          card.style.transform = 'scale(1)';
-        } else {
-          card.style.display = 'none';
-          card.style.opacity = '0';
-        }
-      });
-    }
-    
-    // Dark/Light Theme toggle
-    let currentTheme = 'dark';
-    function toggleTheme() {
-      const root = document.documentElement;
-      const themeIcon = document.getElementById('theme-icon');
-      
-      if (currentTheme === 'dark') {
-        root.setAttribute('data-theme', 'light');
-        currentTheme = 'light';
-      } else {
-        root.removeAttribute('data-theme');
-        currentTheme = 'dark';
-      }
-    }
-
-    // Image Modal Lightbox Control
-    const modal = document.getElementById("image-modal");
-    const modalImg = document.getElementById("modal-img");
-    const captionText = document.getElementById("modal-caption");
-    
-    // Bind click event to all project images
-    document.querySelectorAll('.project-card-image').forEach(img => {
-      img.addEventListener('click', function(e) {
-        e.stopPropagation(); // Card click bubble block
-        modal.style.display = "block";
-        modalImg.src = this.src;
-        // Strip the tooltip hint for the modal caption
-        captionText.innerHTML = this.alt.replace(" (클릭 시 원본 슬라이드 확대)", "");
-      });
-    });
-    
-    function closeModal() {
-      modal.style.display = "none";
-    }
-    
-    // Close modal on Escape key
-    document.addEventListener('keydown', function(event) {
-      if (event.key === "Escape") {
-        closeModal();
-      }
-    });
-  </script>
+      </script>
 </body>
+
 </html>
